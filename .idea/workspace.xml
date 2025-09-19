@@ -4,34 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49e3f3cb-ff58-4a39-8440-e83ae554e2e1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dados_biblioteca.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Autor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Biblioteca.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Bibliotecario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Catalogavel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Categoria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Emprestavel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/EstadoEmprestimo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Livro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/LivroDigital.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/LivroFisico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Revista.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Usuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/UsuarioComum.java" afterDir="false" />
-    </list>
+    <list default="true" id="49e3f3cb-ff58-4a39-8440-e83ae554e2e1" name="Changes" comment="Primeiro commit - Projeto de Biblioteca Java." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,6 +18,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Dan0668079/GerenciamentoBiblioteca.git",
+    "accountId": "61984146-f1d4-4fc6-ab16-4f0e63bd7b11"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -95,6 +74,15 @@
       <option name="presentableId" value="Default" />
       <updated>1758152453430</updated>
     </task>
+    <task id="LOCAL-00001" summary="Primeiro commit - Projeto de Biblioteca Java.">
+      <option name="closed" value="true" />
+      <created>1758324753978</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1758324753978</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,6 +95,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Primeiro commit - Projeto de Biblioteca Java." />
+    <option name="LAST_COMMIT_MESSAGE" value="Primeiro commit - Projeto de Biblioteca Java." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
