@@ -11,13 +11,25 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Biblioteca implements Serializable {
+    private static final long serialVersionUID = 1L; // Adicionado para estabilidade
     private List<Catalogavel> acervo;
 
     public Biblioteca() {
         this.acervo = new ArrayList<>();
     }
 
+//    public void adicionarItem(Catalogavel item) {
+//        // Melhoria futura: Adicionar verificação se o código já existe aqui.
+//        this.acervo.add(item);
+//        System.out.println("Item com codigo '" + item.getCodigo() + "' adicionado ao acervo.");
+//    }
+
     public void adicionarItem(Catalogavel item) {
+        if (buscarItemPorCodigo(item.getCodigo()).isPresent()) {
+            // Logica de rejeição
+            System.out.println("ERRO: Item com codigo '" + item.getCodigo() + "' ja existe no acervo. Operacao cancelada.");
+            return;
+        }
         this.acervo.add(item);
         System.out.println("Item com codigo '" + item.getCodigo() + "' adicionado ao acervo.");
     }
@@ -27,6 +39,7 @@ public class Biblioteca implements Serializable {
         if (removido) {
             System.out.println("Item com codigo '" + codigo + "' removido com sucesso.");
         } else {
+            // Mensagem de erro para o cenário "Remover item, deve exibir uma mensagem dizendo que não existe"
             System.out.println("Item com codigo '" + codigo + "' nao encontrado.");
         }
     }
@@ -37,28 +50,45 @@ public class Biblioteca implements Serializable {
                 .findFirst();
     }
 
-    // Novo metodo para emprestar um item
-    public void emprestarItem(String codigo) {
+    // Método atualizado para emprestar um item com a verificação do limite do usuário
+    public void emprestarItem(String codigo, UsuarioComum usuario) {
+        // Validação do limite de empréstimos
+        if (!usuario.podeEmprestar()) {
+            System.out.println("Voce ja atingiu o limite de 3 emprestimos. Por favor, devolva um item antes de pegar outro.");
+            return;
+        }
+
         var itemOptional = buscarItemPorCodigo(codigo);
         if (itemOptional.isPresent()) {
             var item = itemOptional.get();
             if (item instanceof Emprestavel emprestavel) {
                 emprestavel.emprestar();
+                if (emprestavel.estaEmprestado()) {
+                    // Se o empréstimo foi realizado (não estava já emprestado), atualiza o contador do usuário
+                    usuario.adicionarEmprestimo();
+                }
             } else {
                 System.out.println("O item '" + item.getTitulo() + "' nao pode ser emprestado.");
             }
         } else {
+            // Mensagem de erro para o cenário "Emprestar item, caso não tenha exiba uma mensagem..."
             System.out.println("Item com codigo '" + codigo + "' nao encontrado.");
         }
     }
 
-    // Novo metodo para devolver um item
-    public void devolverItem(String codigo) {
+    // Método atualizado para devolver um item, informando o usuário
+    public void devolverItem(String codigo, UsuarioComum usuario) {
         var itemOptional = buscarItemPorCodigo(codigo);
         if (itemOptional.isPresent()) {
             var item = itemOptional.get();
             if (item instanceof Emprestavel emprestavel) {
-                emprestavel.devolver();
+                if (emprestavel.estaEmprestado()) {
+                    emprestavel.devolver();
+                    // Se a devolução foi realizada, atualiza o contador do usuário
+                    usuario.removerEmprestimo();
+                } else {
+                    System.out.println("O item '" + item.getTitulo() + "' ja esta disponivel ou nao pode ser devolvido.");
+                }
             } else {
                 System.out.println("O item '" + item.getTitulo() + "' nao pode ser devolvido.");
             }
